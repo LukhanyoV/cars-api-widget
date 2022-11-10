@@ -6,7 +6,7 @@ const carsTableBody = document.querySelector(".carsTableBody");
 
 // Immediately Invoked Function Expression
 (async () => {
-    const {data} = await axios.get("http://api-tutor.herokuapp.com/v1/cars");
+    const {data} = await axios.get("https://api-tutor.herokuapp.com/v1/cars");
     carsTableBody.innerHTML = carsTemplate({
         cars: data.map((car, i) => {
             return {
@@ -26,7 +26,7 @@ const colorsTableBody = document.querySelector(".colorsTableBody");
 
 // Immediately Invoked Function Expression
 (async () => {
-    const {data} = await axios.get("http://api-tutor.herokuapp.com/v1/colors");
+    const {data} = await axios.get("https://api-tutor.herokuapp.com/v1/colors");
     colorsTableBody.innerHTML = colorsTemplate({
         colors: data.map((color, i) => {
             return {
@@ -46,7 +46,7 @@ const brandsTableBody = document.querySelector(".brandsTableBody");
 
 // Immediately Invoked Function Expression
 (async () => {
-    const {data} = await axios.get("http://api-tutor.herokuapp.com/v1/makes");
+    const {data} = await axios.get("https://api-tutor.herokuapp.com/v1/makes");
     brandsTableBody.innerHTML = brandsTemplate({
         brands: data.map((brand, i) => {
             return {

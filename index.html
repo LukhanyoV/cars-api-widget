@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars API</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+        }
+        .break-mb {
+            display: none;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        td,th {
+            padding: 5px;
+        }
+        table {
+            height: min-content;
+        }
+        
+
+        @media screen and (max-width: 687px) {
+            .container {
+                flex-direction: column;
+            }
+            .break-mb {
+                display: block;
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Cars API Widget</h1>
+    <div class="container">
+        <!-- show colors table --> 
+        <h2 class="break-mb">Colors Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Colors</th>
+                </tr>
+                <tr>
+                    <th>#</th>
+                    <th>Color</th>
+                </tr>
+            </thead>
+            <tbody class="colorsTableBody">
+                <script class="colorsText" type="script/x-template">
+                    {{#each colors}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{color}}</td>
+                    </ul>
+                    {{/each}}
+                </script>
+            </tbody>
+        </table>
+
+        <!-- show brands table -->
+        <h2 class="break-mb">Brands Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Brands</th>
+                </tr>
+                <tr>
+                    <th>#</th>
+                    <th>Brand</th>
+                </tr>
+            </thead>
+            <tbody class="brandsTableBody">
+                <script class="brandsText" type="script/x-template">
+                    {{#each brands}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{brand}}</td>
+                    </ul>
+                    {{/each}}
+                </script>
+            </tbody>
+        </table>
+
+        <!-- show cars table -->
+        <h2 class="break-mb">Cars Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="6">Show Cars</th>
+                </tr>
+                <tr>
+                    <th>#</th>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Color</th>
+                    <th>Price</th>
+                    <th>Reg Number</th>
+                </tr>
+            </thead>
+            <tbody class="carsTableBody">
+                <script class="carsText" type="text/x-template">
+                    {{#each cars}}
+                    <tr>
+                        <td>{{index}}</td>
+                        <td>{{make}}</td>
+                        <td>{{model}}</td>
+                        <td>{{color}}</td>
+                        <td>{{price}}</td>
+                        <td>{{reg_number}}</td>
+                    </tr>
+                    {{/each}}
+                </script>
+            </tbody>
+        </table>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

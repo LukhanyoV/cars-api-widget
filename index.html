@@ -8,6 +8,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
     <style>
+        * {
+            margin-top: 0;
+        }
+        body, html {
+            margin: 0;
+        }
         h1 {
             text-align: center;
         }
@@ -28,15 +34,35 @@
         table {
             height: min-content;
         }
-        
+        ul {
+            display: flex;
+            background-color: #6c757d;
+            align-items: center;
+        }
+
+        ul li {
+            padding: 10px;
+            margin: 1em;
+            list-style-type: none;
+        }
+
+        a, a:visited {
+            color: white;
+            text-decoration: none;
+            text-transform: capitalize;
+        }
 
         @media screen and (max-width: 687px) {
             .container {
                 flex-direction: column;
+                margin: 1em;
             }
             .break-mb {
                 display: block;
                 text-decoration: underline;
+            }
+            h2 {
+                margin: 5px;
             }
         }
     </style>

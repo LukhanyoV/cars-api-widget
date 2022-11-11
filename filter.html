@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cars API</title>
     <style>
-        body {
+        * {
+            margin-top: 0;
+        }
+        body, html {
             margin: 0;
             padding: 0;
         }
@@ -25,7 +28,6 @@
 
         .filters {
             display: flex;
-            flex-direction: column;
         }
 
         select {
@@ -46,43 +48,71 @@
         table {
             height: min-content;
         }
+        ul {
+            display: flex;
+            background-color: #6c757d;
+            align-items: center;
+        }
+
+        ul li {
+            padding: 10px;
+            margin: 1em;
+            list-style-type: none;
+        }
+
+        a, a:visited {
+            color: white;
+            text-decoration: none;
+            text-transform: capitalize;
+        }
+        
+        @media screen and (max-width: 687px) {
+            .container {
+                flex-direction: column;
+                margin: 1em;
+            }
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
 </head>
 <body>
     <div class="loading">LOADING...</div>
+    <nav style="display: none;">
+        <ul>
+            <li><a href="index.html">cars widget</a></li>
+            <li><a href="filter.html" style="text-decoration: underline;">cars filter</a></li>
+        </ul>
+    </nav>
     <div class="container">
-        <nav>
-            <ul>
-                <li><a href="index.html">cars widget</a></li>
-                <li><a href="filter.html">cars filter</a></li>
-            </ul>
-        </nav>
         <div>
             <h1>Filter Cars</h1>
             <p>Select brand and or color to filter by</p>
             <em>If you do not select any you will be shown a list of all the available cars.</em>
             <div class="filters">
-                <h2>Brand: </h2>
-                <select name="brand" class="brands">
-                    <script class="brandText" type="text/x-template">
-                    <option value=""> --select brand-- </option>
-                    {{#each brands}}
-                    <option value="{{this}}">{{this}}</option>
-                    {{/each}}
-                    </script>
-                </select>
+                <div>
+                    <h2>Brand: </h2>
+                    <select name="brand" class="brands">
+                        <script class="brandText" type="text/x-template">
+                        <option value=""> --select brand-- </option>
+                        {{#each brands}}
+                        <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+                        </script>
+                    </select>
+                </div>
 
-                <h2>Color: </h2>
-                <select name="color" class="colors">
-                    <script class="colorText" type="text/x-template">
-                    <option value=""> --select color-- </option>
-                    {{#each colors}}
-                    <option value="{{this}}">{{this}}</option>
-                    {{/each}}
-                    </script>
-                </select>
+               <div>
+                    <h2>Color: </h2>
+                    <select name="color" class="colors">
+                        <script class="colorText" type="text/x-template">
+                        <option value=""> --select color-- </option>
+                        {{#each colors}}
+                        <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+                        </script>
+                    </select>
+               </div>
             </div>
             <button class="show-cars">SHOW CARS</button>
         </div>

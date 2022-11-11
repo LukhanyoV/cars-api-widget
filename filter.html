@@ -118,6 +118,7 @@
         </div>
         <div class="display-cars">
             <script class="carsText" type="text/x-template">
+                {{#if cars}}
                 <table>
                     <thead>
                         <tr>
@@ -139,12 +140,16 @@
                             <td>{{make}}</td>
                             <td>{{model}}</td>
                             <td>{{color}}</td>
-                            <td>{{price}}</td>
+                            <td>R{{price}}</td>
                             <td>{{reg_number}}</td>
                         </tr>
                         {{/each}}
                     </tbody>
                 </table>
+                {{/if}}
+                {{#unless cars}}
+                <h2>No cars available</h2>
+                {{/unless}}
             </script>
         </div>
     </div>

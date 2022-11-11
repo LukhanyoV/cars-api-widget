@@ -21,7 +21,7 @@ const colors = document.querySelector(".colors");
 
     document.querySelector(".loading").style.display = "none";
     document.querySelector(".container").style = "display: flex; justify-content: space-around;";
-    document.querySelector("nav").style = "display: block"
+    document.querySelector(".navbar").style = "display: block";
 })();
 
 // show the cars

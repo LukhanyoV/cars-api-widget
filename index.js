@@ -15,6 +15,9 @@ const carsTableBody = document.querySelector(".carsTableBody");
             }
         })
     });
+    document.querySelector(".loading").style.display = "none";
+    document.querySelector(".container").style = "display: block;";
+    document.querySelector(".navbar").style = "display: block";
 })();
 
 
